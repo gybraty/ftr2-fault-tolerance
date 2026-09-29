@@ -1,0 +1,46 @@
+{
+  "table": [
+    [
+      "Successful transactions",
+      1,
+      13,
+      "+12"
+    ],
+    [
+      "Failed transactions",
+      14,
+      2,
+      "-12"
+    ],
+    [
+      "Lost amount (KZT)",
+      425000,
+      150000,
+      "-275000"
+    ],
+    [
+      "Retries",
+      0,
+      11,
+      "+11"
+    ],
+    [
+      "Rollbacks",
+      0,
+      2,
+      "+2"
+    ],
+    [
+      "Completion rate",
+      "6.67%",
+      "86.67%",
+      "+80.00 pp"
+    ]
+  ],
+  "calculations": {
+    "recovery_improvement_pp": 80,
+    "recovery_improvement_factor": 13,
+    "transaction_loss_reduction": 0.8571,
+    "amount_loss_reduction": 0.6471
+  }
+}

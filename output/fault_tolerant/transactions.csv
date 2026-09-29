@@ -1,0 +1,16 @@
+transaction,amount_kzt,failure,exception,attempts,retries,recovery_action,final_status
+T001,12000,None,-,1,0,-,SUCCESS
+T002,25000,Network,NetworkError,2,1,retry x1,SUCCESS (after retry 1)
+T003,8000,None,-,1,0,-,SUCCESS
+T004,45000,Timeout,TimeoutError,3,2,retry x2,SUCCESS (after retry 2)
+T005,13000,None,-,1,0,-,SUCCESS
+T006,70000,Database,DatabaseError,3,2,2 retries exhausted; rollback to CP1,ROLLED_BACK
+T007,9000,None,-,1,0,-,SUCCESS
+T008,31000,Network,NetworkError,2,1,retry x1,SUCCESS (after retry 1)
+T009,15000,None,-,1,0,-,SUCCESS
+T010,50000,Timeout,TimeoutError,3,2,retry x2,SUCCESS (after retry 2)
+T011,6000,None,-,1,0,-,SUCCESS
+T012,80000,Database,DatabaseError,3,2,2 retries exhausted; rollback to CP2,ROLLED_BACK
+T013,11000,None,-,1,0,-,SUCCESS
+T014,22000,None,-,1,0,-,SUCCESS
+T015,40000,Network,NetworkError,2,1,retry x1,SUCCESS (after retry 1)

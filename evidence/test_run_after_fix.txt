@@ -1,0 +1,23 @@
+▶ input data
+  ✔ matches the assignment (0.294709ms)
+✔ input data (0.775166ms)
+▶ Part A - baseline
+  ✔ stops at the first failure (2.941208ms)
+✔ Part A - baseline (3.519625ms)
+▶ Parts B, C, D - fault-tolerant processor
+  ✔ one failure does not stop the batch and failures are classified (21.054417ms)
+  ✔ follows the exact retry policy (15.908ms)
+  ✔ rolls back database failures and reaches 13 of 15 (15.920084ms)
+  ✔ writes a checkpoint after every 5 successful transactions (15.189ms)
+  ✔ rollback keeps successful transactions committed after the checkpoint (3.504917ms)
+  ✔ charges a timed-out payment only once (idempotency) (15.7265ms)
+  ✔ does not retry a validation error (1.049583ms)
+✔ Parts B, C, D - fault-tolerant processor (88.915958ms)
+ℹ tests 9
+ℹ suites 3
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 177.499167

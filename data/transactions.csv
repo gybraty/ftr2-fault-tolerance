@@ -1,0 +1,16 @@
+id,amount_kzt,failure_type
+T001,12000,None
+T002,25000,Network
+T003,8000,None
+T004,45000,Timeout
+T005,13000,None
+T006,70000,Database
+T007,9000,None
+T008,31000,Network
+T009,15000,None
+T010,50000,Timeout
+T011,6000,None
+T012,80000,Database
+T013,11000,None
+T014,22000,None
+T015,40000,Network

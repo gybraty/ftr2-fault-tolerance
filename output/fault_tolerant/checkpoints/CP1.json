@@ -1,0 +1,33 @@
+{
+  "name": "CP1",
+  "created_at": "2026-09-29T13:21:24.320Z",
+  "successful_transactions": 5,
+  "total_amount_kzt": 103000,
+  "committed_ids": "T001;T002;T003;T004;T005",
+  "ledger": {
+    "records": [
+      {
+        "id": "T001",
+        "amount": 12000
+      },
+      {
+        "id": "T002",
+        "amount": 25000
+      },
+      {
+        "id": "T003",
+        "amount": 8000
+      },
+      {
+        "id": "T004",
+        "amount": 45000
+      },
+      {
+        "id": "T005",
+        "amount": 13000
+      }
+    ],
+    "successfulTransactions": 5,
+    "totalAmount": 103000
+  }
+}

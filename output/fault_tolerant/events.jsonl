@@ -1,0 +1,58 @@
+{"timestamp":"2026-09-29T13:21:24.112Z","event":"TRANSACTION_START","step":0,"transaction":"T001","amount":12000}
+{"timestamp":"2026-09-29T13:21:24.115Z","event":"TRANSACTION_SUCCESS","step":1,"transaction":"T001","amount":12000,"attempts":1}
+{"timestamp":"2026-09-29T13:21:24.115Z","event":"TRANSACTION_START","step":1,"transaction":"T002","amount":25000}
+{"timestamp":"2026-09-29T13:21:24.115Z","event":"FAULT","step":2,"transaction":"T002","attempt":1,"failure":"Network","exception":"NetworkError","detail":"T002: connection to payment gateway refused"}
+{"timestamp":"2026-09-29T13:21:24.115Z","event":"RETRY_SCHEDULED","step":2,"transaction":"T002","next_attempt":2,"backoff_s":0.05}
+{"timestamp":"2026-09-29T13:21:24.167Z","event":"TRANSACTION_SUCCESS","step":3,"transaction":"T002","amount":25000,"attempts":2}
+{"timestamp":"2026-09-29T13:21:24.167Z","event":"TRANSACTION_START","step":3,"transaction":"T003","amount":8000}
+{"timestamp":"2026-09-29T13:21:24.167Z","event":"TRANSACTION_SUCCESS","step":4,"transaction":"T003","amount":8000,"attempts":1}
+{"timestamp":"2026-09-29T13:21:24.167Z","event":"TRANSACTION_START","step":4,"transaction":"T004","amount":45000}
+{"timestamp":"2026-09-29T13:21:24.168Z","event":"FAULT","step":5,"transaction":"T004","attempt":1,"failure":"Timeout","exception":"TimeoutError","detail":"T004: gateway response timed out (charge state unknown)"}
+{"timestamp":"2026-09-29T13:21:24.168Z","event":"RETRY_SCHEDULED","step":5,"transaction":"T004","next_attempt":2,"backoff_s":0.05}
+{"timestamp":"2026-09-29T13:21:24.219Z","event":"FAULT","step":6,"transaction":"T004","attempt":2,"failure":"Timeout","exception":"TimeoutError","detail":"T004: gateway response timed out (charge state unknown)"}
+{"timestamp":"2026-09-29T13:21:24.219Z","event":"RETRY_SCHEDULED","step":6,"transaction":"T004","next_attempt":3,"backoff_s":0.1}
+{"timestamp":"2026-09-29T13:21:24.319Z","event":"TRANSACTION_SUCCESS","step":7,"transaction":"T004","amount":45000,"attempts":3}
+{"timestamp":"2026-09-29T13:21:24.320Z","event":"TRANSACTION_START","step":7,"transaction":"T005","amount":13000}
+{"timestamp":"2026-09-29T13:21:24.320Z","event":"TRANSACTION_SUCCESS","step":8,"transaction":"T005","amount":13000,"attempts":1}
+{"timestamp":"2026-09-29T13:21:24.320Z","event":"CHECKPOINT","step":8,"checkpoint":"CP1","success_count":5,"total_amount":103000}
+{"timestamp":"2026-09-29T13:21:24.321Z","event":"TRANSACTION_START","step":8,"transaction":"T006","amount":70000}
+{"timestamp":"2026-09-29T13:21:24.321Z","event":"FAULT","step":9,"transaction":"T006","attempt":1,"failure":"Database","exception":"DatabaseError","detail":"T006: ledger write failed after inserting the row"}
+{"timestamp":"2026-09-29T13:21:24.321Z","event":"RETRY_SCHEDULED","step":9,"transaction":"T006","next_attempt":2,"backoff_s":0.05}
+{"timestamp":"2026-09-29T13:21:24.372Z","event":"FAULT","step":10,"transaction":"T006","attempt":2,"failure":"Database","exception":"DatabaseError","detail":"T006: ledger write failed after inserting the row"}
+{"timestamp":"2026-09-29T13:21:24.372Z","event":"RETRY_SCHEDULED","step":10,"transaction":"T006","next_attempt":3,"backoff_s":0.1}
+{"timestamp":"2026-09-29T13:21:24.473Z","event":"FAULT","step":11,"transaction":"T006","attempt":3,"failure":"Database","exception":"DatabaseError","detail":"T006: ledger write failed after inserting the row"}
+{"timestamp":"2026-09-29T13:21:24.473Z","event":"ROLLBACK","step":11,"transaction":"T006","restored":"CP1","success_count":5,"total_amount":103000}
+{"timestamp":"2026-09-29T13:21:24.473Z","event":"TRANSACTION_ROLLED_BACK","step":11,"transaction":"T006","amount":70000,"failure":"Database","attempts":3,"action":"2 retries exhausted; rollback to CP1"}
+{"timestamp":"2026-09-29T13:21:24.474Z","event":"TRANSACTION_START","step":11,"transaction":"T007","amount":9000}
+{"timestamp":"2026-09-29T13:21:24.474Z","event":"TRANSACTION_SUCCESS","step":12,"transaction":"T007","amount":9000,"attempts":1}
+{"timestamp":"2026-09-29T13:21:24.474Z","event":"TRANSACTION_START","step":12,"transaction":"T008","amount":31000}
+{"timestamp":"2026-09-29T13:21:24.474Z","event":"FAULT","step":13,"transaction":"T008","attempt":1,"failure":"Network","exception":"NetworkError","detail":"T008: connection to payment gateway refused"}
+{"timestamp":"2026-09-29T13:21:24.474Z","event":"RETRY_SCHEDULED","step":13,"transaction":"T008","next_attempt":2,"backoff_s":0.05}
+{"timestamp":"2026-09-29T13:21:24.524Z","event":"TRANSACTION_SUCCESS","step":14,"transaction":"T008","amount":31000,"attempts":2}
+{"timestamp":"2026-09-29T13:21:24.524Z","event":"TRANSACTION_START","step":14,"transaction":"T009","amount":15000}
+{"timestamp":"2026-09-29T13:21:24.525Z","event":"TRANSACTION_SUCCESS","step":15,"transaction":"T009","amount":15000,"attempts":1}
+{"timestamp":"2026-09-29T13:21:24.525Z","event":"TRANSACTION_START","step":15,"transaction":"T010","amount":50000}
+{"timestamp":"2026-09-29T13:21:24.525Z","event":"FAULT","step":16,"transaction":"T010","attempt":1,"failure":"Timeout","exception":"TimeoutError","detail":"T010: gateway response timed out (charge state unknown)"}
+{"timestamp":"2026-09-29T13:21:24.525Z","event":"RETRY_SCHEDULED","step":16,"transaction":"T010","next_attempt":2,"backoff_s":0.05}
+{"timestamp":"2026-09-29T13:21:24.576Z","event":"FAULT","step":17,"transaction":"T010","attempt":2,"failure":"Timeout","exception":"TimeoutError","detail":"T010: gateway response timed out (charge state unknown)"}
+{"timestamp":"2026-09-29T13:21:24.576Z","event":"RETRY_SCHEDULED","step":17,"transaction":"T010","next_attempt":3,"backoff_s":0.1}
+{"timestamp":"2026-09-29T13:21:24.678Z","event":"TRANSACTION_SUCCESS","step":18,"transaction":"T010","amount":50000,"attempts":3}
+{"timestamp":"2026-09-29T13:21:24.678Z","event":"TRANSACTION_START","step":18,"transaction":"T011","amount":6000}
+{"timestamp":"2026-09-29T13:21:24.678Z","event":"TRANSACTION_SUCCESS","step":19,"transaction":"T011","amount":6000,"attempts":1}
+{"timestamp":"2026-09-29T13:21:24.679Z","event":"CHECKPOINT","step":19,"checkpoint":"CP2","success_count":10,"total_amount":214000}
+{"timestamp":"2026-09-29T13:21:24.679Z","event":"TRANSACTION_START","step":19,"transaction":"T012","amount":80000}
+{"timestamp":"2026-09-29T13:21:24.679Z","event":"FAULT","step":20,"transaction":"T012","attempt":1,"failure":"Database","exception":"DatabaseError","detail":"T012: ledger write failed after inserting the row"}
+{"timestamp":"2026-09-29T13:21:24.679Z","event":"RETRY_SCHEDULED","step":20,"transaction":"T012","next_attempt":2,"backoff_s":0.05}
+{"timestamp":"2026-09-29T13:21:24.731Z","event":"FAULT","step":21,"transaction":"T012","attempt":2,"failure":"Database","exception":"DatabaseError","detail":"T012: ledger write failed after inserting the row"}
+{"timestamp":"2026-09-29T13:21:24.731Z","event":"RETRY_SCHEDULED","step":21,"transaction":"T012","next_attempt":3,"backoff_s":0.1}
+{"timestamp":"2026-09-29T13:21:24.832Z","event":"FAULT","step":22,"transaction":"T012","attempt":3,"failure":"Database","exception":"DatabaseError","detail":"T012: ledger write failed after inserting the row"}
+{"timestamp":"2026-09-29T13:21:24.832Z","event":"ROLLBACK","step":22,"transaction":"T012","restored":"CP2","success_count":10,"total_amount":214000}
+{"timestamp":"2026-09-29T13:21:24.833Z","event":"TRANSACTION_ROLLED_BACK","step":22,"transaction":"T012","amount":80000,"failure":"Database","attempts":3,"action":"2 retries exhausted; rollback to CP2"}
+{"timestamp":"2026-09-29T13:21:24.833Z","event":"TRANSACTION_START","step":22,"transaction":"T013","amount":11000}
+{"timestamp":"2026-09-29T13:21:24.833Z","event":"TRANSACTION_SUCCESS","step":23,"transaction":"T013","amount":11000,"attempts":1}
+{"timestamp":"2026-09-29T13:21:24.833Z","event":"TRANSACTION_START","step":23,"transaction":"T014","amount":22000}
+{"timestamp":"2026-09-29T13:21:24.833Z","event":"TRANSACTION_SUCCESS","step":24,"transaction":"T014","amount":22000,"attempts":1}
+{"timestamp":"2026-09-29T13:21:24.834Z","event":"TRANSACTION_START","step":24,"transaction":"T015","amount":40000}
+{"timestamp":"2026-09-29T13:21:24.834Z","event":"FAULT","step":25,"transaction":"T015","attempt":1,"failure":"Network","exception":"NetworkError","detail":"T015: connection to payment gateway refused"}
+{"timestamp":"2026-09-29T13:21:24.834Z","event":"RETRY_SCHEDULED","step":25,"transaction":"T015","next_attempt":2,"backoff_s":0.05}
+{"timestamp":"2026-09-29T13:21:24.885Z","event":"TRANSACTION_SUCCESS","step":26,"transaction":"T015","amount":40000,"attempts":2}

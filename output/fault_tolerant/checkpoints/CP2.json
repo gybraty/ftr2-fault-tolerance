@@ -1,0 +1,53 @@
+{
+  "name": "CP2",
+  "created_at": "2026-09-29T13:21:24.679Z",
+  "successful_transactions": 10,
+  "total_amount_kzt": 214000,
+  "committed_ids": "T001;T002;T003;T004;T005;T007;T008;T009;T010;T011",
+  "ledger": {
+    "records": [
+      {
+        "id": "T001",
+        "amount": 12000
+      },
+      {
+        "id": "T002",
+        "amount": 25000
+      },
+      {
+        "id": "T003",
+        "amount": 8000
+      },
+      {
+        "id": "T004",
+        "amount": 45000
+      },
+      {
+        "id": "T005",
+        "amount": 13000
+      },
+      {
+        "id": "T007",
+        "amount": 9000
+      },
+      {
+        "id": "T008",
+        "amount": 31000
+      },
+      {
+        "id": "T009",
+        "amount": 15000
+      },
+      {
+        "id": "T010",
+        "amount": 50000
+      },
+      {
+        "id": "T011",
+        "amount": 6000
+      }
+    ],
+    "successfulTransactions": 10,
+    "totalAmount": 214000
+  }
+}

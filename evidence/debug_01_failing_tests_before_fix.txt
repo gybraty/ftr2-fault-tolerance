@@ -1,0 +1,96 @@
+▶ input data
+  ✔ matches the assignment (0.296125ms)
+✔ input data (0.754584ms)
+▶ Part A - baseline
+  ✔ stops at the first failure (3.096167ms)
+✔ Part A - baseline (3.157083ms)
+▶ Parts B, C, D - fault-tolerant processor
+  ✔ one failure does not stop the batch and failures are classified (14.64275ms)
+  ✖ follows the exact retry policy (10.826333ms)
+  ✖ rolls back database failures and reaches 13 of 15 (10.017208ms)
+  ✖ writes a checkpoint after every 5 successful transactions (11.431959ms)
+  ✔ rollback keeps successful transactions committed after the checkpoint (2.570709ms)
+  ✔ charges a timed-out payment only once (idempotency) (9.542583ms)
+  ✔ does not retry a validation error (0.985417ms)
+✖ Parts B, C, D - fault-tolerant processor (60.606083ms)
+ℹ tests 9
+ℹ suites 3
+ℹ pass 6
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 148.348083
+
+✖ failing tests:
+
+test at tests/fault_tolerance.test.ts:40:3
+✖ follows the exact retry policy (10.826333ms)
+  AssertionError [ERR_ASSERTION]: T004
+  
+  2 !== 3
+  
+      at TestContext.<anonymous> (file:///Users/gybraty/Desktop/ftr2/ftr2-fault-tolerance/tests/fault_tolerance.test.ts:44:63)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 3,
+    operator: 'strictEqual'
+  }
+
+test at tests/fault_tolerance.test.ts:48:3
+✖ rolls back database failures and reaches 13 of 15 (10.017208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   11,
+  -   13,
+      2,
+  +   192000,
+  +   245000
+  -   287000,
+  -   150000
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/gybraty/Desktop/ftr2/ftr2-fault-tolerance/tests/fault_tolerance.test.ts:53:12)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 11, 2, 192000, 245000 ],
+    expected: [ 13, 2, 287000, 150000 ],
+    operator: 'deepStrictEqual'
+  }
+
+test at tests/fault_tolerance.test.ts:57:3
+✖ writes a checkpoint after every 5 successful transactions (11.431959ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      [
+        'CP1',
+        5,
+  +     67000
+  -     103000
+      ],
+      [
+        'CP2',
+        10,
+  +     152000
+  -     214000
+      ]
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/gybraty/Desktop/ftr2/ftr2-fault-tolerance/tests/fault_tolerance.test.ts:59:12)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ [ 'CP1', 5, 67000 ], [ 'CP2', 10, 152000 ] ],
+    expected: [ [ 'CP1', 5, 103000 ], [ 'CP2', 10, 214000 ] ],
+    operator: 'deepStrictEqual'
+  }

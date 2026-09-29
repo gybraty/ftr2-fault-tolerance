@@ -1,0 +1,28 @@
+13:21:24.034 TRANSACTION_START    step=1 transaction=T001 amount=12000
+13:21:24.037 TRANSACTION_SUCCESS  step=1 transaction=T001 amount=12000
+13:21:24.037 TRANSACTION_START    step=2 transaction=T002 amount=25000
+13:21:24.037 BATCH_ABORTED        step=2 transaction=T002 exception=NetworkError
+NetworkError: T002: connection to payment gateway refused
+    at processPayment (file:///Users/gybraty/Desktop/ftr2/ftr2-fault-tolerance/src/common.ts:47:11)
+    at runBaseline (file:///Users/gybraty/Desktop/ftr2/ftr2-fault-tolerance/src/baseline.ts:20:7)
+    at file:///Users/gybraty/Desktop/ftr2/ftr2-fault-tolerance/src/baseline.ts:54:19
+    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+
+=== BASELINE SUMMARY ===
+mode                       baseline
+transactions_total         15
+transactions_attempted     2
+successful_transactions    1
+failed_transactions        1
+not_attempted              13
+transactions_lost          14
+processed_amount_kzt       12000
+lost_amount_kzt            425000
+retries                    0
+rollbacks                  0
+completion_rate            0.0667
+stopped_at                 T002
+error                      NetworkError: T002: connection to payment gateway refused
+baseline exit code: 1

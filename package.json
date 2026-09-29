@@ -1,0 +1,23 @@
+{
+  "name": "ftr2-fault-tolerance",
+  "version": "4.0.0",
+  "description": "Assignment 2 - Software Fault-Tolerant Design (synthetic student-payment processor)",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "baseline": "node --experimental-strip-types --disable-warning=ExperimentalWarning src/baseline.ts",
+    "fault-tolerant": "node --experimental-strip-types --disable-warning=ExperimentalWarning src/fault_tolerant.ts",
+    "compare": "node --experimental-strip-types --disable-warning=ExperimentalWarning src/compare.ts",
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test tests/*.test.ts",
+    "typecheck": "tsc",
+    "all": "./run_all.sh",
+    "figures": "node docs/make_figures.cjs",
+    "report": "node docs/build_report.cjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^7"
+  }
+}

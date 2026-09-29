@@ -1,0 +1,4 @@
+{"timestamp":"2026-09-29T13:21:24.034Z","event":"TRANSACTION_START","step":1,"transaction":"T001","amount":12000}
+{"timestamp":"2026-09-29T13:21:24.037Z","event":"TRANSACTION_SUCCESS","step":1,"transaction":"T001","amount":12000}
+{"timestamp":"2026-09-29T13:21:24.037Z","event":"TRANSACTION_START","step":2,"transaction":"T002","amount":25000}
+{"timestamp":"2026-09-29T13:21:24.037Z","event":"BATCH_ABORTED","step":2,"transaction":"T002","exception":"NetworkError"}

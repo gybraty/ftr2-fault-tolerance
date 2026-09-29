@@ -1,0 +1,85 @@
+TAP version 13
+# Subtest: input data
+    # Subtest: matches the assignment
+    ok 1 - matches the assignment
+      ---
+      duration_ms: 0.284209
+      type: 'test'
+      ...
+    1..1
+ok 1 - input data
+  ---
+  duration_ms: 0.743375
+  type: 'suite'
+  ...
+# Subtest: Part A - baseline
+    # Subtest: stops at the first failure
+    ok 1 - stops at the first failure
+      ---
+      duration_ms: 2.950541
+      type: 'test'
+      ...
+    1..1
+ok 2 - Part A - baseline
+  ---
+  duration_ms: 3.014333
+  type: 'suite'
+  ...
+# Subtest: Parts B, C, D - fault-tolerant processor
+    # Subtest: one failure does not stop the batch and failures are classified
+    ok 1 - one failure does not stop the batch and failures are classified
+      ---
+      duration_ms: 20.38025
+      type: 'test'
+      ...
+    # Subtest: follows the exact retry policy
+    ok 2 - follows the exact retry policy
+      ---
+      duration_ms: 17.385834
+      type: 'test'
+      ...
+    # Subtest: rolls back database failures and reaches 13 of 15
+    ok 3 - rolls back database failures and reaches 13 of 15
+      ---
+      duration_ms: 15.500916
+      type: 'test'
+      ...
+    # Subtest: writes a checkpoint after every 5 successful transactions
+    ok 4 - writes a checkpoint after every 5 successful transactions
+      ---
+      duration_ms: 16.732083
+      type: 'test'
+      ...
+    # Subtest: rollback keeps successful transactions committed after the checkpoint
+    ok 5 - rollback keeps successful transactions committed after the checkpoint
+      ---
+      duration_ms: 3.678583
+      type: 'test'
+      ...
+    # Subtest: charges a timed-out payment only once (idempotency)
+    ok 6 - charges a timed-out payment only once (idempotency)
+      ---
+      duration_ms: 16.004833
+      type: 'test'
+      ...
+    # Subtest: does not retry a validation error
+    ok 7 - does not retry a validation error
+      ---
+      duration_ms: 1.178875
+      type: 'test'
+      ...
+    1..7
+ok 3 - Parts B, C, D - fault-tolerant processor
+  ---
+  duration_ms: 91.446333
+  type: 'suite'
+  ...
+1..3
+# tests 9
+# suites 3
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 183.18775

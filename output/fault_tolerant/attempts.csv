@@ -1,0 +1,27 @@
+step,timestamp,transaction,amount_kzt,attempt,failure,action,result
+1,2026-09-29T13:21:24.115Z,T001,12000,initial,-,commit,SUCCESS
+2,2026-09-29T13:21:24.115Z,T002,25000,initial,Network,retry scheduled (backoff 0.05s),FAIL
+3,2026-09-29T13:21:24.167Z,T002,25000,retry 1,- (fault cleared),commit,SUCCESS
+4,2026-09-29T13:21:24.167Z,T003,8000,initial,-,commit,SUCCESS
+5,2026-09-29T13:21:24.168Z,T004,45000,initial,Timeout,retry scheduled (backoff 0.05s),FAIL
+6,2026-09-29T13:21:24.219Z,T004,45000,retry 1,Timeout,retry scheduled (backoff 0.1s),FAIL
+7,2026-09-29T13:21:24.319Z,T004,45000,retry 2,- (fault cleared),commit,SUCCESS
+8,2026-09-29T13:21:24.320Z,T005,13000,initial,-,commit,SUCCESS
+9,2026-09-29T13:21:24.321Z,T006,70000,initial,Database,retry scheduled (backoff 0.05s),FAIL
+10,2026-09-29T13:21:24.372Z,T006,70000,retry 1,Database,retry scheduled (backoff 0.1s),FAIL
+11,2026-09-29T13:21:24.473Z,T006,70000,retry 2,Database,2 retries exhausted; rollback to CP1,ROLLED_BACK
+12,2026-09-29T13:21:24.474Z,T007,9000,initial,-,commit,SUCCESS
+13,2026-09-29T13:21:24.474Z,T008,31000,initial,Network,retry scheduled (backoff 0.05s),FAIL
+14,2026-09-29T13:21:24.524Z,T008,31000,retry 1,- (fault cleared),commit,SUCCESS
+15,2026-09-29T13:21:24.524Z,T009,15000,initial,-,commit,SUCCESS
+16,2026-09-29T13:21:24.525Z,T010,50000,initial,Timeout,retry scheduled (backoff 0.05s),FAIL
+17,2026-09-29T13:21:24.576Z,T010,50000,retry 1,Timeout,retry scheduled (backoff 0.1s),FAIL
+18,2026-09-29T13:21:24.678Z,T010,50000,retry 2,- (fault cleared),commit,SUCCESS
+19,2026-09-29T13:21:24.678Z,T011,6000,initial,-,commit,SUCCESS
+20,2026-09-29T13:21:24.679Z,T012,80000,initial,Database,retry scheduled (backoff 0.05s),FAIL
+21,2026-09-29T13:21:24.731Z,T012,80000,retry 1,Database,retry scheduled (backoff 0.1s),FAIL
+22,2026-09-29T13:21:24.833Z,T012,80000,retry 2,Database,2 retries exhausted; rollback to CP2,ROLLED_BACK
+23,2026-09-29T13:21:24.833Z,T013,11000,initial,-,commit,SUCCESS
+24,2026-09-29T13:21:24.833Z,T014,22000,initial,-,commit,SUCCESS
+25,2026-09-29T13:21:24.834Z,T015,40000,initial,Network,retry scheduled (backoff 0.05s),FAIL
+26,2026-09-29T13:21:24.885Z,T015,40000,retry 1,- (fault cleared),commit,SUCCESS

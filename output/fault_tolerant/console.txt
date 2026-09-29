@@ -1,0 +1,78 @@
+13:21:24.112 TRANSACTION_START    step=0 transaction=T001 amount=12000
+13:21:24.115 TRANSACTION_SUCCESS  step=1 transaction=T001 amount=12000 attempts=1
+13:21:24.115 TRANSACTION_START    step=1 transaction=T002 amount=25000
+13:21:24.115 FAULT                step=2 transaction=T002 attempt=1 failure=Network exception=NetworkError detail=T002: connection to payment gateway refused
+13:21:24.115 RETRY_SCHEDULED      step=2 transaction=T002 next_attempt=2 backoff_s=0.05
+13:21:24.167 TRANSACTION_SUCCESS  step=3 transaction=T002 amount=25000 attempts=2
+13:21:24.167 TRANSACTION_START    step=3 transaction=T003 amount=8000
+13:21:24.167 TRANSACTION_SUCCESS  step=4 transaction=T003 amount=8000 attempts=1
+13:21:24.167 TRANSACTION_START    step=4 transaction=T004 amount=45000
+13:21:24.168 FAULT                step=5 transaction=T004 attempt=1 failure=Timeout exception=TimeoutError detail=T004: gateway response timed out (charge state unknown)
+13:21:24.168 RETRY_SCHEDULED      step=5 transaction=T004 next_attempt=2 backoff_s=0.05
+13:21:24.219 FAULT                step=6 transaction=T004 attempt=2 failure=Timeout exception=TimeoutError detail=T004: gateway response timed out (charge state unknown)
+13:21:24.219 RETRY_SCHEDULED      step=6 transaction=T004 next_attempt=3 backoff_s=0.1
+13:21:24.319 TRANSACTION_SUCCESS  step=7 transaction=T004 amount=45000 attempts=3
+13:21:24.320 TRANSACTION_START    step=7 transaction=T005 amount=13000
+13:21:24.320 TRANSACTION_SUCCESS  step=8 transaction=T005 amount=13000 attempts=1
+13:21:24.320 CHECKPOINT           step=8 checkpoint=CP1 success_count=5 total_amount=103000
+13:21:24.321 TRANSACTION_START    step=8 transaction=T006 amount=70000
+13:21:24.321 FAULT                step=9 transaction=T006 attempt=1 failure=Database exception=DatabaseError detail=T006: ledger write failed after inserting the row
+13:21:24.321 RETRY_SCHEDULED      step=9 transaction=T006 next_attempt=2 backoff_s=0.05
+13:21:24.372 FAULT                step=10 transaction=T006 attempt=2 failure=Database exception=DatabaseError detail=T006: ledger write failed after inserting the row
+13:21:24.372 RETRY_SCHEDULED      step=10 transaction=T006 next_attempt=3 backoff_s=0.1
+13:21:24.473 FAULT                step=11 transaction=T006 attempt=3 failure=Database exception=DatabaseError detail=T006: ledger write failed after inserting the row
+13:21:24.473 ROLLBACK             step=11 transaction=T006 restored=CP1 success_count=5 total_amount=103000
+13:21:24.473 TRANSACTION_ROLLED_BACK step=11 transaction=T006 amount=70000 failure=Database attempts=3 action=2 retries exhausted; rollback to CP1
+13:21:24.474 TRANSACTION_START    step=11 transaction=T007 amount=9000
+13:21:24.474 TRANSACTION_SUCCESS  step=12 transaction=T007 amount=9000 attempts=1
+13:21:24.474 TRANSACTION_START    step=12 transaction=T008 amount=31000
+13:21:24.474 FAULT                step=13 transaction=T008 attempt=1 failure=Network exception=NetworkError detail=T008: connection to payment gateway refused
+13:21:24.474 RETRY_SCHEDULED      step=13 transaction=T008 next_attempt=2 backoff_s=0.05
+13:21:24.524 TRANSACTION_SUCCESS  step=14 transaction=T008 amount=31000 attempts=2
+13:21:24.524 TRANSACTION_START    step=14 transaction=T009 amount=15000
+13:21:24.525 TRANSACTION_SUCCESS  step=15 transaction=T009 amount=15000 attempts=1
+13:21:24.525 TRANSACTION_START    step=15 transaction=T010 amount=50000
+13:21:24.525 FAULT                step=16 transaction=T010 attempt=1 failure=Timeout exception=TimeoutError detail=T010: gateway response timed out (charge state unknown)
+13:21:24.525 RETRY_SCHEDULED      step=16 transaction=T010 next_attempt=2 backoff_s=0.05
+13:21:24.576 FAULT                step=17 transaction=T010 attempt=2 failure=Timeout exception=TimeoutError detail=T010: gateway response timed out (charge state unknown)
+13:21:24.576 RETRY_SCHEDULED      step=17 transaction=T010 next_attempt=3 backoff_s=0.1
+13:21:24.678 TRANSACTION_SUCCESS  step=18 transaction=T010 amount=50000 attempts=3
+13:21:24.678 TRANSACTION_START    step=18 transaction=T011 amount=6000
+13:21:24.678 TRANSACTION_SUCCESS  step=19 transaction=T011 amount=6000 attempts=1
+13:21:24.679 CHECKPOINT           step=19 checkpoint=CP2 success_count=10 total_amount=214000
+13:21:24.679 TRANSACTION_START    step=19 transaction=T012 amount=80000
+13:21:24.679 FAULT                step=20 transaction=T012 attempt=1 failure=Database exception=DatabaseError detail=T012: ledger write failed after inserting the row
+13:21:24.679 RETRY_SCHEDULED      step=20 transaction=T012 next_attempt=2 backoff_s=0.05
+13:21:24.731 FAULT                step=21 transaction=T012 attempt=2 failure=Database exception=DatabaseError detail=T012: ledger write failed after inserting the row
+13:21:24.731 RETRY_SCHEDULED      step=21 transaction=T012 next_attempt=3 backoff_s=0.1
+13:21:24.832 FAULT                step=22 transaction=T012 attempt=3 failure=Database exception=DatabaseError detail=T012: ledger write failed after inserting the row
+13:21:24.832 ROLLBACK             step=22 transaction=T012 restored=CP2 success_count=10 total_amount=214000
+13:21:24.833 TRANSACTION_ROLLED_BACK step=22 transaction=T012 amount=80000 failure=Database attempts=3 action=2 retries exhausted; rollback to CP2
+13:21:24.833 TRANSACTION_START    step=22 transaction=T013 amount=11000
+13:21:24.833 TRANSACTION_SUCCESS  step=23 transaction=T013 amount=11000 attempts=1
+13:21:24.833 TRANSACTION_START    step=23 transaction=T014 amount=22000
+13:21:24.833 TRANSACTION_SUCCESS  step=24 transaction=T014 amount=22000 attempts=1
+13:21:24.834 TRANSACTION_START    step=24 transaction=T015 amount=40000
+13:21:24.834 FAULT                step=25 transaction=T015 attempt=1 failure=Network exception=NetworkError detail=T015: connection to payment gateway refused
+13:21:24.834 RETRY_SCHEDULED      step=25 transaction=T015 next_attempt=2 backoff_s=0.05
+13:21:24.885 TRANSACTION_SUCCESS  step=26 transaction=T015 amount=40000 attempts=2
+
+=== FAULT-TOLERANT SUMMARY ===
+mode                       fault_tolerant
+transactions_total         15
+transactions_attempted     15
+total_attempts             26
+successful_transactions    13
+recovered_by_retry         5
+failed_transactions        2
+transactions_lost          2
+processed_amount_kzt       287000
+lost_amount_kzt            150000
+retries                    11
+rollbacks                  2
+completion_rate            0.8667
+ledger_total_kzt           287000
+ledger_records             13
+gateway_charges            15
+CP1  successful=5  total=103000
+CP2  successful=10  total=214000

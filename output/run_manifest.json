@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-09-29T13:21:25.225Z",
+  "node": "v22.15.0",
+  "platform": "darwin-arm64",
+  "version": "v4.0.0",
+  "sha256": {
+    "src/common.ts": "9ad9297946682689",
+    "src/baseline.ts": "49b7bf3cae918c3a",
+    "src/fault_tolerant.ts": "67ddaa4ee9db8340",
+    "src/compare.ts": "c5cc2ffa5b50f674",
+    "data/transactions.csv": "e052477d9f0de393",
+    "tests/fault_tolerance.test.ts": "ef48ae661b511e14"
+  }
+}

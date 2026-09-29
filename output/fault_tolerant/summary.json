@@ -1,0 +1,34 @@
+{
+  "mode": "fault_tolerant",
+  "transactions_total": 15,
+  "transactions_attempted": 15,
+  "total_attempts": 26,
+  "successful_transactions": 13,
+  "recovered_by_retry": 5,
+  "failed_transactions": 2,
+  "transactions_lost": 2,
+  "processed_amount_kzt": 287000,
+  "lost_amount_kzt": 150000,
+  "retries": 11,
+  "rollbacks": 2,
+  "completion_rate": 0.8667,
+  "ledger_total_kzt": 287000,
+  "ledger_records": 13,
+  "gateway_charges": 15,
+  "checkpoints": [
+    {
+      "name": "CP1",
+      "created_at": "2026-09-29T13:21:24.320Z",
+      "successful_transactions": 5,
+      "total_amount_kzt": 103000,
+      "committed_ids": "T001;T002;T003;T004;T005"
+    },
+    {
+      "name": "CP2",
+      "created_at": "2026-09-29T13:21:24.679Z",
+      "successful_transactions": 10,
+      "total_amount_kzt": 214000,
+      "committed_ids": "T001;T002;T003;T004;T005;T007;T008;T009;T010;T011"
+    }
+  ]
+}
